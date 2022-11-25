@@ -1,3 +1,6 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.example.Account;
 import org.junit.Assert;
 import org.junit.Test;
@@ -29,9 +32,13 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Test Account")
+    @Description("Basic test for class Account")
+    @Step("Check Account with string")
     public void checkAccount() {
         Account account = new Account(string);
         Assert.assertEquals(expectedResult, account.checkNameToEmboss());
+        System.out.println("Test with " + string);
     }
 
 }
